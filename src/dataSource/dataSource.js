@@ -188,6 +188,8 @@ const ds = {
        delete product.shops;
        return product;
     }),
+
+    findProductById: (id) => data.find((product) => product.id == id),
 }
 
 module.exports = ds;
