@@ -59,7 +59,7 @@ const shops = [
 ];
 
 const shopsDS = {
-  retrieveShops: () => shops,
+  retrieveShops: (limit) => shops.slice(0, limit),
 };
 
 module.exports = shopsDS;
