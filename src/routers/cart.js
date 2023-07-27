@@ -27,4 +27,9 @@ routers.delete("/:id", (request, response) => {
   response.status(cartItem != undefined ? 200 : 404).send();
 });
 
+routers.delete("/", (request, response) => {
+  cartDS.clearCart();
+  response.send();
+});
+
 module.exports = routers;

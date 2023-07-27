@@ -1,6 +1,6 @@
 const { v4: uuidV4 } = require("uuid");
 
-const cart = [];
+let cart = [];
 
 const cartDS = {
   fetchCartItems: () => cart,
@@ -18,6 +18,8 @@ const cartDS = {
     if (cartItemIndex != -1) return cart.splice(cartItemIndex, 1)[0];
     return undefined;
   },
+
+  clearCart: () => (cart = []),
 };
 
 module.exports = cartDS;
