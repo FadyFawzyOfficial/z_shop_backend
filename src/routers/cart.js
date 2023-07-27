@@ -15,4 +15,11 @@ routers.get("/", (request, response) => {
   response.status(200).json(cartDS.fetchCartItems());
 });
 
+routers.get("/:id", (request, response) => {
+  const cartItemId = request.params.id;
+  const cartItem = cartDS.findCartItemById(cartItemId);
+  if (cartItem != undefined) response.status(200).json(cartItem);
+  else response.status(404).send();
+});
+
 module.exports = routers;
