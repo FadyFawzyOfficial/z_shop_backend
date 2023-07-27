@@ -32,4 +32,13 @@ routers.delete("/", (request, response) => {
   response.send();
 });
 
+routers.patch("/:id", (request, response) => {
+  const productId = request.params.id;
+  const productUpdates = request.body;
+  const updatedProduct = cartDS.updateCartItem(productId, productUpdates);
+  updatedProduct != undefined
+    ? response.json(updatedProduct)
+    : response.status(404).send();
+});
+
 module.exports = routers;

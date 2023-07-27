@@ -19,6 +19,18 @@ const cartDS = {
     return undefined;
   },
 
+  updateCartItem: (id, update) => {
+    productIndex = cart.findIndex((product) => product.id == id);
+
+    if (productIndex != -1) {
+      const updatedProduct = { ...cart[productIndex], ...update };
+      cart[productIndex] = updatedProduct;
+      return updatedProduct;
+    }
+
+    return undefined;
+  },
+
   clearCart: () => (cart = []),
 };
 
