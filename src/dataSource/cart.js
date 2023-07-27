@@ -1,9 +1,11 @@
+const { v4: uuidV4 } = require("uuid");
+
 const cart = [];
 
 const cartDS = {
   addItemToCart: (cartItem) => {
     cart.push(cartItem);
-    return 1;
+    return uuidV4();
   },
 };
 
