@@ -12,6 +12,12 @@ const cartDS = {
   },
 
   findCartItemById: (id) => cart.find((item) => item.id == id),
+
+  deleteCartItemById: (id) => {
+    const cartItemIndex = cart.findIndex((item) => item.id == id);
+    if (cartItemIndex != -1) return cart.splice(cartItemIndex, 1)[0];
+    return undefined;
+  },
 };
 
 module.exports = cartDS;

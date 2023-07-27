@@ -22,4 +22,9 @@ routers.get("/:id", (request, response) => {
   else response.status(404).send();
 });
 
+routers.delete("/:id", (request, response) => {
+  const cartItem = cartDS.deleteCartItemById(request.params.id);
+  response.status(cartItem != undefined ? 200 : 404).send();
+});
+
 module.exports = routers;
