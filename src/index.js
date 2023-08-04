@@ -7,7 +7,7 @@ const shopsRouters = require("./routers/shops");
 
 const apiServer = express();
 
-apiServer.listen(3000, () => console.log("API Server Started"));
+apiServer.listen(3000, "0.0.0.0", () => console.log("API Server Started"));
 
 apiServer.get("/", function (request, response) {
   response.send("Hi, Fady. This Message from Express");
